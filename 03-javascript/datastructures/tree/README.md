@@ -74,55 +74,64 @@ In this example:
 ## Practice Assignments 🎯
 
 ### Assignment 1: Tree Height Calculator
+
 **Difficulty: Easy**
 
 **Objective:** Create a function to calculate the height of a binary tree.
 
 **Instructions:**
+
 - Implement a function `getTreeHeight(root)` that takes the root node as input
 - Return the maximum height (depth) of the tree
 - Return 0 for an empty tree
 
 ### Assignment 2: Node Counter
+
 **Difficulty: Easy**
 
 **Objective:** Count the total number of nodes in a binary tree.
 
 **Instructions:**
+
 - Create a function `countNodes(root)` that takes the root node as input
 - Count and return the total number of nodes in the tree
 - Include both leaf nodes and internal nodes in the count
 
 ### Assignment 3: Leaf Node Finder
+
 **Difficulty: Medium**
 
 **Objective:** Find and print all leaf nodes in a binary tree.
 
 **Instructions:**
+
 - Implement a function `findLeafNodes(root)` that takes the root node as input
 - Return an array containing all leaf nodes (nodes with no children)
 - Maintain the order of leaves from left to right
 
 ### Assignment 4: Level Order Traversal
+
 **Difficulty: Medium**
 
 **Objective:** Print nodes level by level, from top to bottom.
 
 **Instructions:**
+
 - Create a function `levelOrderTraversal(root)` that takes the root node as input
 - Print nodes at each level on a new line
 - Use a queue to manage the level-by-level traversal
 
 ### Assignment 5: Tree Mirror
+
 **Difficulty: Medium**
 
 **Objective:** Create a mirror image of a binary tree.
 
 **Instructions:**
+
 - Implement a function `mirrorTree(root)` that takes the root node as input
 - Swap left and right children of all nodes
 - Return the root node of the mirrored tree
 - The original tree structure should be modified in place
 
 Each assignment builds upon the basic binary tree concepts and helps understand different tree operations and traversal techniques.
-

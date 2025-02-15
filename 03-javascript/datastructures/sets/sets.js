@@ -1,26 +1,45 @@
 // Function to extract unique elements from an array using a Set
-function uniqueElements(arr) {
-    // Implement uniqueElements function
+export function uniqueElements(arr) {
+    let s= new Set()
+    arr.forEach(i => s.add(i))
+    return s
 }
 
 // Function to perform a union operation on two sets
-function union(setA, setB) {
-    // Implement union function
+export function union(setA, setB) {
+    let s= new Set()
+    setA.forEach(i => s.add(i))
+    setB.forEach(i => s.add(i))
+    return s
 }
 
 // Function to perform an intersection operation on two sets
-function intersection(setA, setB) {
-    // Implement intersection function
+export function intersection(setA, setB) {
+    let s = new Set()
+    for (let i of setA){
+        for (let j of setB){
+            if (i==j){
+                s.add(i)
+            }
+        }
+    }
+    return s
 }
 
 // Function to perform a difference operation on two sets
-function difference(setA, setB) {
-    // Implement difference function
+export function difference(setA, setB){
+    let s = new Set([...setA].filter(i=> !setB.has(i)))
+    return s
 }
 
 // Function to check if one set is a subset of another
-function isSubset(setA, setB) {
-    // Implement isSubset function
+export function isSubset(setA, setB) {
+   if ([...setA].every(i=> setB.has(i)) || [...setB].every(i=> setA.has(i))){
+    return true
+   }
+   else{
+    return false
+   }
 }
 
 // Exporting the functions for use
