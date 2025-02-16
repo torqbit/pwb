@@ -1,0 +1,70 @@
+.talks{
+    width:var(--container-width);
+    margin: 50px auto;
+}
+.talks p{
+    color:white;
+}
+.talks hr{
+    border-color:   #2d2d36b4;
+    border-width: 1px;
+    margin-bottom: 40px;
+}
+.talks__topic{
+    display:flex;
+    gap:var(--gap);
+}
+.language{
+    width:var(--talk-flex-width);
+    border-radius: 5px;
+    background-color: #2b2b40;
+}
+.language img{
+    width:var(--talk-img-width);
+    border-radius: 5px 5px 0 0;
+    height:140px;
+    object-fit: cover;
+}
+.language p:first-of-type{
+    font-size: 12px;
+    padding:4px 10px;
+    max-width: max-content;
+    border-radius: 4px;
+    color: black;
+    margin-left: 15px;
+}
+.language>#white{
+    background-color: antiquewhite;
+}
+.language>#green{
+    background-color:rgb(177, 233, 177) ;
+}
+.language>#blue{
+    background-color: lightblue;
+}
+
+
+.language p:nth-last-of-type(even){
+    font-size: 13px;
+    margin-left: 15px;
+    margin-right:20px;
+    color:antiquewhite;
+}
+.language p:last-of-type{
+    font-size: 11px;
+    margin-left: 15px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    color: rgba(189, 212, 207, 0.87);
+
+}
+@media screen and (max-width:430px){
+    .talks{
+        margin:50px auto 0 auto;
+    }
+    .talks__topic{
+        display:flex;
+        flex-direction: column;
+    }
+
+}

@@ -1,0 +1,52 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #121213;
+  margin: 0;
+  padding: 0;
+  --card-bg: #252535;
+}
+
+h1 {
+  font-size: 4em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+}
+section,
+nav,
+footer {
+  font-size: 14px;
+  --container-width: 900px;
+  --gap: 50px;
+  --article-img-width: 430px;
+  --article-flex-width: 430px;
+  --project-flex-width: 405px;
+  --talk-img-width: 267px;
+  --talk-flex-width: 267px;
+}
+@media screen and (max-width: 430px) {
+  section,
+  nav,
+  footer {
+    --container-width: 90vw;
+    --gap: 30px;
+    --article-img-width: 90vw;
+    --article-flex-width: 90vw;
+    --project-flex-width: calc(90vw - 20px);
+    --talk-flex-width: 90vw;
+    --talk-img-width: 90vw;
+  }
+  h1 {
+    font-size: 3em;
+  }
+}
