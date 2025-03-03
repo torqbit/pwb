@@ -1,5 +1,14 @@
 class Article{
-    constructor(blogImg, dateOfPublish, category, title, description, readLink, linkLogo){
+
+    blogImg: string;
+    dateOfPublish: string;
+    category:string;
+    title:string;
+    description: string;
+    readLink:string;
+    linkLogo:string
+
+    constructor(blogImg: string, dateOfPublish: string, category: string, title: string, description: string, readLink: string, linkLogo: string){
         this.blogImg=blogImg
         this.dateOfPublish= dateOfPublish
         this.category=category
@@ -10,10 +19,11 @@ class Article{
     }
 }
 class ArticleStore{
+    articles:Article[]
     constructor(){
         this.articles = []
     }
-    addArticle(article){
+    addArticle(article:Article){
         this.articles.push(article)
     }
     getArticles() {
@@ -29,4 +39,5 @@ articleList.addArticle(a1)
 articleList.addArticle(a2)
 articleList.addArticle(a3)
 articleList.addArticle(a4)
+
 export default articleList;

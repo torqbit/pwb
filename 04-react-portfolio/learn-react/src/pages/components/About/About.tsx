@@ -1,21 +1,24 @@
 import styles from '@/styles/About.module.css'
-import {FC} from "react";
+import {FC, useContext} from "react";
 
-type AboutProps ={
-  img: string;
-  name: string;
-  introduction: string;
-}
-export const About: FC<AboutProps> = ({img, name, introduction}) =>{
+
+import { UserProfile } from '@/pages';
+
+
+export const About: FC<UserProfile> = ({name, description, img}) =>{
+  
+
+ 
+
     return(
     <section id="1" className={styles.about}>
     <div className={styles.about__container}>
       <div className={styles.img__container}>
-        <img src={img} />
+        { <img src={img} /> }
       </div>
       <p>Hey,I'm {name}</p>
       <h1>
-        {introduction}
+        {description}
       </h1>
     </div>
     </section>

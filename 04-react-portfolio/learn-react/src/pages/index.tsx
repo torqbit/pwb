@@ -2,21 +2,27 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import styles from '../styles/signUp.module.css'
 import { About } from "./components/About/About";
+import { AppContext } from "./components/AppContext";
+import App from "./Main";
+import articleList from  './components/Articles/ArticleStore.js'
+import { ArticleProps } from "./components/Articles/Article";
+import { Articles } from "./components/Articles/Article";
 
-type UserProfile= {
-    name : string;
-    title : string;
+export type UserProfile = {
+    img: string;
+    name: string;
     description: string;
+    articles: ArticleProps[]
 }
-const getUserProfile=(email: string)=>{
-    const user: UserProfile= {name:'aisha', title:'fullstack-dev', description:'learning frontend' }
-    return user
-}
-
 
 
 const HomePage =()=>{
-    const [userProfile, setUserProfile]= useState<UserProfile>();
+    const [userProfile, setUserProfile]= useState<UserProfile>({name: '', img:'', description:'', articles: []});
+    const [loggedInUser, setLoggedInUser] = useState("")
+    const userinformation = localStorage.getItem(`${loggedInUser}-articles`) || '{}'
+    
+    
+    
     const getCookie=(name: string)=> {
         const cookies = document.cookie.split(";");
         const cookie = cookies.find((c) => c.trim().startsWith(name + "="));
@@ -28,30 +34,24 @@ const HomePage =()=>{
         const userEmail = getCookie("email");
         
         if (userEmail) {
-            setUserProfile({...userProfile, ...getUserProfile(userEmail)})
-            return userEmail;
+            setLoggedInUser(userEmail)
+            setUserProfile({...userProfile, articles: JSON.parse(userinformation)})
         }
         else{
-            return null
+            router.push('/signup')
         }
-
+    
       }
 
     useEffect(() =>{
-        const user =  getRememberedUser();
-        console.log(user)
-        if (!user){
-            router.push('/signup')
-        }
-        
+        getRememberedUser();
     }, []);
 
     return(
         <div>
-            {userProfile && 
-            <About img={userProfile.title} introduction={userProfile.description} name={userProfile.name}/>}
+            <About name={userProfile.name} description={userProfile.description} img={userProfile.img}/>
+            <Articles  articles={userProfile.articles} />
         </div>
-        )
+    )
 };
 export default HomePage
-

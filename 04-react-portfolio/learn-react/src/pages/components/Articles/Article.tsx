@@ -1,32 +1,33 @@
 import styles from '@/styles/Article.module.css'
 import {FC} from "react";
+import articleList from './ArticleStore';
 
-type ArticleProps ={
-  title: string;
-  articles: {blogImg: string;
+export type ArticleProps = {
+    blogImg: string;
     dateOfPublish: string;
     category: string;
     title: string;
     description: string;
     readLink: string;
-    linkLogo: string;}[];
+    linkLogo: string;
 }
-export const Articles: FC<ArticleProps> = ({title,articles}) => {
+
+export const Articles: FC<{articles: ArticleProps[]}> = ({articles}) => {
     return(
     <section id="2" className={styles.article}>
-        <p>{title}</p>
+        <p>Articles</p>
         <hr />
         <div className={styles.grid}>
         {articles.map(article => 
             <ArticleCard
-            blogImg={article.blogImg} 
-            dateOfPublish={article.dateOfPublish} 
-            category={article.category} 
-            title={article.title} 
-            description={article.description} 
-            readLink={article.readLink} 
-            linkLogo={article.linkLogo}
-            /> 
+              blogImg={article.blogImg} 
+              dateOfPublish={article.dateOfPublish} 
+              category={article.category} 
+              title={article.title} 
+              description={article.description} 
+              readLink={article.readLink} 
+              linkLogo={article.linkLogo}
+            />
         )}
         </div>
     </section>
